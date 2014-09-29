@@ -5,11 +5,11 @@
     "path" : "/room.{format}",
     "description" : "Manage rooms."
   }, {
-    "path" : "/presentation.{format}",
-    "description" : "Manage presentations."
-  }, {
     "path" : "/confday.{format}",
     "description" : "Access to list of conference days."
+  }, {
+    "path" : "/presentation.{format}",
+    "description" : "Manage presentations."
   } ],
   "info" : {
     "title" : "JavaTwo conference",

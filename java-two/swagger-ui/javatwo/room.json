@@ -4,6 +4,20 @@
   "basePath" : "http://localhost:8080/j2/rest",
   "resourcePath" : "/room",
   "apis" : [ {
+    "path" : "/room",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "List of conference rooms.",
+      "notes" : "",
+      "type" : "array",
+      "items" : {
+        "$ref" : "Room"
+      },
+      "nickname" : "list",
+      "produces" : [ "application/json" ],
+      "parameters" : [ ]
+    } ]
+  }, {
     "path" : "/room/{roomNumber}",
     "operations" : [ {
       "method" : "GET",
@@ -21,20 +35,6 @@
         "paramType" : "path",
         "allowMultiple" : false
       } ]
-    } ]
-  }, {
-    "path" : "/room",
-    "operations" : [ {
-      "method" : "GET",
-      "summary" : "List of conference rooms.",
-      "notes" : "",
-      "type" : "array",
-      "items" : {
-        "$ref" : "Room"
-      },
-      "nickname" : "list",
-      "produces" : [ "application/json" ],
-      "parameters" : [ ]
     } ]
   } ],
   "models" : {
