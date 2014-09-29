@@ -25,6 +25,6 @@ restServices.factory('l$Room', ['$resource',
     function($resource){
         return $resource('rest/room/:no', {}, {
             list: {method:'GET', isArray:true},
-            get:  {method:'GET', params:{no:''}, isArray:false}
+            getByNumber:  {method:'GET', params:{no:''}, isArray:false}
         });
     }]);

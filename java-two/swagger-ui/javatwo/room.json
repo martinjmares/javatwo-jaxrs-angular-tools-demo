@@ -1,0 +1,66 @@
+{
+  "apiVersion" : "1.0",
+  "swaggerVersion" : "1.2",
+  "basePath" : "http://localhost:8080/j2/rest",
+  "resourcePath" : "/room",
+  "apis" : [ {
+    "path" : "/room/{roomNumber}",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "Detail of the conference room.",
+      "notes" : "",
+      "type" : "void",
+      "nickname" : "getByNumber",
+      "produces" : [ "application/json" ],
+      "parameters" : [ {
+        "name" : "roomNumber",
+        "description" : "Number of requested room",
+        "required" : true,
+        "type" : "integer",
+        "format" : "int32",
+        "paramType" : "path",
+        "allowMultiple" : false
+      } ]
+    } ]
+  }, {
+    "path" : "/room",
+    "operations" : [ {
+      "method" : "GET",
+      "summary" : "List of conference rooms.",
+      "notes" : "",
+      "type" : "array",
+      "items" : {
+        "$ref" : "Room"
+      },
+      "nickname" : "list",
+      "produces" : [ "application/json" ],
+      "parameters" : [ ]
+    } ]
+  } ],
+  "models" : {
+    "Room" : {
+      "id" : "Room",
+      "description" : "Represents conference room in one of the JavaTwo conference centers.",
+      "required" : [ "number", "seats" ],
+      "properties" : {
+        "number" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Room number"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Name of the room for better orientation and more human friendly approach."
+        },
+        "building" : {
+          "type" : "string"
+        },
+        "seats" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Number of seats in the room in conference room configuration."
+        }
+      }
+    }
+  }
+}
