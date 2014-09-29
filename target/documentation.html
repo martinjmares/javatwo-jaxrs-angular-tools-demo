@@ -1,0 +1,489 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>JavaTwo conference</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"/>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    <!--<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href=" http://twitter.github.com/bootstrap/assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"/>
+
+    <script>
+        $(function () {
+                        $("#tabs00").tabs();
+
+                $("#accordion0api").accordion({
+                    collapsible: true,
+                    active: false,
+                    header: "h5",
+                    heightStyle: "content"
+                });
+                        $("#tabs10").tabs();
+                        $("#tabs10").tabs();
+
+                $("#accordion1api").accordion({
+                    collapsible: true,
+                    active: false,
+                    header: "h5",
+                    heightStyle: "content"
+                });
+                        $("#tabs20").tabs();
+                        $("#tabs20").tabs();
+
+                $("#accordion2api").accordion({
+                    collapsible: true,
+                    active: false,
+                    header: "h5",
+                    heightStyle: "content"
+                });
+        });
+    </script>
+    <style type="text/css">
+        td, th {
+            padding: 2px 4px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        #notes {
+            position: absolute;
+            right: 10px;
+            top: 4px;
+            font-size: 9px;
+        }
+
+        #main_container {
+            position: relative;
+            width: 958px;
+        }
+    </style>
+</head>
+<body>
+<div id="main_container">
+    <h1>JavaTwo conference</h1>
+    <h3>BasePath: http://localhost:8080/j2/rest</h3>
+    <h3>This is internal API for JavaTwo conference user interface.</h3>
+    <h3>Terms of Service: <a href=""></a></h3>
+    <h3>Contact: <a href="mailto:martin.mares(at)oracle(dot)com">martin.mares(at)oracle(dot)com</a></h3>
+    <h3>License: <a href=""></a></h3>
+    <h3> Api Version: 1.0</h3>
+
+    <div id="api_container">
+        <h3>Resources</h3>
+            <h4>/confday</h4>
+
+            <div class='content'>
+                
+
+
+                <div id="accordion0api">
+                            <h5><span style="font-weight: bold;">GET </span><span>/confday</span>
+
+                                <div id="notes">List of conference days.</div>
+                            </h5>
+                            <div>
+                                <p></p>
+
+                                <div id="tabs00">
+
+                                    <ul>
+                                        <li><a href="#tabs00-1">Request Parameters</a>
+                                        </li>
+                                        <li><a href="#tabs00-2">Response Body</a></li>
+                                        <li><a href="#tabs00-3">Response Status Codes</a>
+                                        </li>
+                                        <li><a href="#tabs00-4">Examples</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tabs00-1">
+                                        <ul>
+                                        </ul>
+                                    </div>
+                                    <div id="tabs00-2">
+                                        <p><a
+                                                href="#">List[string]</a>
+                                            
+                                        </p>
+                                    </div>
+                                    <div id="tabs00-3">
+                                        <table>
+                                            <tr>
+                                                <th>Status Code</th>
+                                                <th>Reason</th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="tabs00-4">
+                                        <p>
+                                           No Samples
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+            </div>
+            <h4>/presentation</h4>
+
+            <div class='content'>
+                
+
+
+                <div id="accordion1api">
+                            <h5><span style="font-weight: bold;">POST </span><span>/presentation</span>
+
+                                <div id="notes">Add a new presentation.</div>
+                            </h5>
+                            <div>
+                                <p></p>
+
+                                <div id="tabs10">
+
+                                    <ul>
+                                        <li><a href="#tabs10-1">Request Parameters</a>
+                                        </li>
+                                        <li><a href="#tabs10-2">Response Body</a></li>
+                                        <li><a href="#tabs10-3">Response Status Codes</a>
+                                        </li>
+                                        <li><a href="#tabs10-4">Examples</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tabs10-1">
+                                        <ul>
+                                                <li>
+                                                    <h7>body</h7>
+                                                    <table>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Required</th>
+                                                            <th>Data Type</th>
+                                                            <th>Description</th>
+                                                        </tr>
+                                                            <tr>
+                                                                <th>body</th>
+                                                                <td>required
+                                                                    </td>
+                                                                <td>Presentation</td>
+                                                                <td>Presentation to be add</td>
+                                                            </tr>
+                                                    </table>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                    <div id="tabs10-2">
+                                        <p><a
+                                                href="#Presentation">Presentation</a>
+                                            
+                                        </p>
+                                    </div>
+                                    <div id="tabs10-3">
+                                        <table>
+                                            <tr>
+                                                <th>Status Code</th>
+                                                <th>Reason</th>
+                                            </tr>
+                                                <tr>
+                                                    <td>409</td>
+                                                    <td>Presentation with such name already exists.</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                    <div id="tabs10-4">
+                                        <p>
+                                           No Samples
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5><span style="font-weight: bold;">GET </span><span>/presentation</span>
+
+                                <div id="notes">List of planned presentations.</div>
+                            </h5>
+                            <div>
+                                <p>It is possible to filter result using query parameters room and day</p>
+
+                                <div id="tabs10">
+
+                                    <ul>
+                                        <li><a href="#tabs10-1">Request Parameters</a>
+                                        </li>
+                                        <li><a href="#tabs10-2">Response Body</a></li>
+                                        <li><a href="#tabs10-3">Response Status Codes</a>
+                                        </li>
+                                        <li><a href="#tabs10-4">Examples</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tabs10-1">
+                                        <ul>
+                                                <li>
+                                                    <h7>query</h7>
+                                                    <table>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Required</th>
+                                                            <th>Data Type</th>
+                                                            <th>Description</th>
+                                                        </tr>
+                                                            <tr>
+                                                                <th>day</th>
+                                                                <td>
+                                                                    optional</td>
+                                                                <td>name.marmar.javatwo.model.ConferenceDay</td>
+                                                                <td>Filter just for this day events</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>room</th>
+                                                                <td>
+                                                                    optional</td>
+                                                                <td>int</td>
+                                                                <td>Filter just for this room number</td>
+                                                            </tr>
+                                                    </table>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                    <div id="tabs10-2">
+                                        <p><a
+                                                href="#Presentation">List[Presentation]</a>
+                                            
+                                        </p>
+                                    </div>
+                                    <div id="tabs10-3">
+                                        <table>
+                                            <tr>
+                                                <th>Status Code</th>
+                                                <th>Reason</th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="tabs10-4">
+                                        <p>
+                                           No Samples
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+            </div>
+            <h4>/room</h4>
+
+            <div class='content'>
+                
+
+
+                <div id="accordion2api">
+                            <h5><span style="font-weight: bold;">GET </span><span>/room</span>
+
+                                <div id="notes">List of conference rooms.</div>
+                            </h5>
+                            <div>
+                                <p></p>
+
+                                <div id="tabs20">
+
+                                    <ul>
+                                        <li><a href="#tabs20-1">Request Parameters</a>
+                                        </li>
+                                        <li><a href="#tabs20-2">Response Body</a></li>
+                                        <li><a href="#tabs20-3">Response Status Codes</a>
+                                        </li>
+                                        <li><a href="#tabs20-4">Examples</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tabs20-1">
+                                        <ul>
+                                        </ul>
+                                    </div>
+                                    <div id="tabs20-2">
+                                        <p><a
+                                                href="#Room">List[Room]</a>
+                                            
+                                        </p>
+                                    </div>
+                                    <div id="tabs20-3">
+                                        <table>
+                                            <tr>
+                                                <th>Status Code</th>
+                                                <th>Reason</th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="tabs20-4">
+                                        <p>
+                                           No Samples
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5><span style="font-weight: bold;">GET </span><span>/room/{roomNumber}</span>
+
+                                <div id="notes">Detail of the conference room.</div>
+                            </h5>
+                            <div>
+                                <p></p>
+
+                                <div id="tabs20">
+
+                                    <ul>
+                                        <li><a href="#tabs20-1">Request Parameters</a>
+                                        </li>
+                                        <li><a href="#tabs20-2">Response Body</a></li>
+                                        <li><a href="#tabs20-3">Response Status Codes</a>
+                                        </li>
+                                        <li><a href="#tabs20-4">Examples</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tabs20-1">
+                                        <ul>
+                                                <li>
+                                                    <h7>path</h7>
+                                                    <table>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Required</th>
+                                                            <th>Data Type</th>
+                                                            <th>Description</th>
+                                                        </tr>
+                                                            <tr>
+                                                                <th>roomNumber</th>
+                                                                <td>required
+                                                                    </td>
+                                                                <td>int</td>
+                                                                <td>Number of requested room</td>
+                                                            </tr>
+                                                    </table>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                    <div id="tabs20-2">
+                                        <p><a
+                                                href="#"></a>
+                                            
+                                        </p>
+                                    </div>
+                                    <div id="tabs20-3">
+                                        <table>
+                                            <tr>
+                                                <th>Status Code</th>
+                                                <th>Reason</th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="tabs20-4">
+                                        <p>
+                                           No Samples
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+            </div>
+    </div>
+    <h3>Data Types</h3>
+        <h4><a name="Presentation">Presentation</a></h4>
+
+        <div>
+            <table>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Required</th>
+                <th>Access</th>
+                <th>Schema</th>
+                <th>Notes</th>
+                    <tr>
+                        <th>roomNumber</th>
+                        <td>int</td>
+                        <td>false</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>presenter</th>
+                        <td>string</td>
+                        <td>false</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>name</th>
+                        <td>string</td>
+                        <td>false</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>conferenceDay</th>
+                        <td><a href="#ConferenceDay">ConferenceDay</a></td>
+                        <td>false</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>reservationCount</th>
+                        <td>int</td>
+                        <td>false</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+            </table>
+        </div>
+        <h4><a name="Room">Room</a></h4>
+
+        <div>
+            <table>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Required</th>
+                <th>Access</th>
+                <th>Schema</th>
+                <th>Notes</th>
+                    <tr>
+                        <th>seats</th>
+                        <td>int</td>
+                        <td>true</td>
+                        <td></td>
+                        <td>Number of seats in the room in conference room configuration.</td>
+                        <td>Number of seats in the room in conference room configuration.</td>
+                    </tr>
+                    <tr>
+                        <th>number</th>
+                        <td>int</td>
+                        <td>true</td>
+                        <td></td>
+                        <td>Room number</td>
+                        <td>Room number</td>
+                    </tr>
+                    <tr>
+                        <th>building</th>
+                        <td>string</td>
+                        <td>false</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>name</th>
+                        <td>string</td>
+                        <td>false</td>
+                        <td></td>
+                        <td>Name of the room for better orientation and more human friendly approach.</td>
+                        <td>Name of the room for better orientation and more human friendly approach.</td>
+                    </tr>
+            </table>
+        </div>
+</div>
+</body>
+</html>

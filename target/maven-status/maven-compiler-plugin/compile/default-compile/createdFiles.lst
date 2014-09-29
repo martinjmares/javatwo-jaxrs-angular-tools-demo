@@ -1,0 +1,15 @@
+name/marmar/javatwo/service/GuavaHack.class
+name/marmar/javatwo/filter/CORSRequestOptionsFilter.class
+name/marmar/javatwo/filter/CORSResponseFilter.class
+name/marmar/javatwo/ConferenceDayResource.class
+name/marmar/javatwo/PresentationResource.class
+name/marmar/javatwo/RoomResource.class
+name/marmar/javatwo/model/Room.class
+name/marmar/javatwo/PresentationResource$1.class
+name/marmar/javatwo/service/RoomCatalogueService.class
+name/marmar/javatwo/service/PresentationCatalogueService.class
+name/marmar/javatwo/filter/RoomDetailView.class
+name/marmar/javatwo/PresentationResource$2.class
+name/marmar/javatwo/model/Presentation.class
+name/marmar/javatwo/model/ConferenceDay.class
+name/marmar/javatwo/RestApplication.class

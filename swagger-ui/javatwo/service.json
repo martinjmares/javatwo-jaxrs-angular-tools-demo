@@ -1,0 +1,20 @@
+{
+  "apiVersion" : "1.0",
+  "swaggerVersion" : "1.2",
+  "apis" : [ {
+    "path" : "/room.{format}",
+    "description" : "Manage rooms."
+  }, {
+    "path" : "/presentation.{format}",
+    "description" : "Manage presentations."
+  }, {
+    "path" : "/confday.{format}",
+    "description" : "Access to list of conference days."
+  } ],
+  "info" : {
+    "title" : "JavaTwo conference",
+    "description" : "This is internal API for JavaTwo conference user interface.",
+    "contact" : "martin.mares(at)oracle(dot)com"
+  },
+  "basePath" : "http://localhost:4050/javatwo/"
+}

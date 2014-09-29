@@ -1,0 +1,9 @@
+cd /Users/martinmares/projects/javaone2014/java-two/swagger-ui
+rm -rf javatwo/*
+cp /Users/martinmares/projects/javaone2014/java-two/target/swagger-json/* javatwo
+echo ""
+echo ""
+echo "USAGE: http://localhost:4050/index.html"
+echo "OPEN: http://localhost:4050/javatwo/service.json"
+echo ""
+python -m SimpleHTTPServer 4050
