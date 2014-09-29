@@ -1,7 +1,0 @@
-BASEDIR=$(dirname $0)
-cd $BASEDIR/swagger-ui
-echo ""
-echo ""
-echo "USAGE: http://localhost:4050/index.html"
-echo ""
-python -m SimpleHTTPServer 4050

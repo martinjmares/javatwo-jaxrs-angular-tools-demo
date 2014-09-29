@@ -1,0 +1,1 @@
+java -cp "/Users/martinmares/Documents/projects/javaone2014/dto-demo/target/dto-demo-1.0.0-SNAPSHOT-bin/dto-demo-1.0.0-SNAPSHOT/*" name.marmar.DozerExample $@
