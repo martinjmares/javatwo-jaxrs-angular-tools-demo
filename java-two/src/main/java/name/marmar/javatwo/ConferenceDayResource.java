@@ -1,7 +1,5 @@
 package name.marmar.javatwo;
 
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
 import name.marmar.javatwo.model.ConferenceDay;
 import name.marmar.javatwo.model.Presentation;
 
@@ -14,10 +12,9 @@ import java.util.Collection;
 /** Rest resource for enumeration of valid conference days
  */
 @Path("confday")
-@Api(value = "confday", description = "Access to list of conference days." )
 public class ConferenceDayResource {
 
-    private static final String RESULT;
+    private final static String RESULT;
     static {
         StringBuilder sb = new StringBuilder();
         sb.append('[');
@@ -35,10 +32,7 @@ public class ConferenceDayResource {
      */
     @GET
     @Produces("application/json")
-    @ApiOperation(value = "List of conference days.",
-            response = String.class,
-            responseContainer = "List")
-    public String list() {
+    public String listPresentations() {
         return RESULT;
     }
 

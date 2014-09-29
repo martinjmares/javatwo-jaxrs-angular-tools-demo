@@ -1,8 +1,5 @@
 package name.marmar.javatwo.model;
 
-import com.wordnik.swagger.annotations.ApiModel;
-import com.wordnik.swagger.annotations.ApiModelProperty;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 /** Room in conference center.
@@ -10,15 +7,11 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author martinmares
  */
 @XmlRootElement
-@ApiModel( value = "Room", description = "Represents conference room in one of the JavaTwo conference centers." )
 public class Room {
-
-    @ApiModelProperty( value = "Room number", required = true )
+    
     private int number;
-    @ApiModelProperty( value = "Name of the room for better orientation and more human friendly approach.")
     private String name;
     private String building;
-    @ApiModelProperty( value = "Number of seats in the room in conference room configuration.", required = true )
     private int seats;
 
     public Room() {
