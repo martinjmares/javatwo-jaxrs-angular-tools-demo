@@ -1,0 +1,22 @@
+<div>
+    <h1>Add new presentation</h1>
+    <form role="form" ng-submit="submit()">
+        <div class="form-group">
+            <label for="name">Subject</label>
+            <input class="form-control" id="name" placeholder="Subject" ng-model="presentation.name">
+        </div>
+        <div class="form-group">
+            <label for="presenter">Speaker</label>
+            <input class="form-control" id="presenter" placeholder="Speaker's name" ng-model="presentation.presenter">
+        </div>
+        <div class="form-group">
+            <label for="confday">When</label>
+            <select ng-model="presentation.conferenceDay" ng-options="day as day for day in $root.confDays" id="confday"></select>
+        </div>
+        <div class="form-group">
+            <label for="room">Where</label>
+            <select ng-model="selectedRoom" ng-options="room.name for room in rooms" id="room"></select>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>

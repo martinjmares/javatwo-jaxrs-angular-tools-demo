@@ -1,0 +1,26 @@
+<div>
+    <h1>Room&nbsp;<span class="small">{{room.number}}</span> </h1>
+    <h2>Detail information</h2>
+    <p><strong>Name: </strong>{{room.name}}</p>
+    <p><strong>Building: </strong>{{room.building}}</p>
+    <p><strong>Seats: </strong>{{room.seats}}</p>
+
+    <h2>Presentations</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Presenter</th>
+                <th>Day</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="presentation in presentations">
+                <td>{{presentation.name}}</td>
+                <td>{{presentation.presenter}}</td>
+                <td>{{presentation.conferenceDay}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

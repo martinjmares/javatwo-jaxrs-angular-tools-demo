@@ -1,0 +1,1 @@
+asadmin deploy --force --name java-two --contextroot "/j2" $(dirname $0)/target/java-two-1.0-SNAPSHOT.war

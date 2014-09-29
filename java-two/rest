@@ -1,0 +1,4 @@
+export http_proxy=""
+export https_proxy=""
+echo "curl -X $1 http://localhost:8080/j2/rest/$2" >&2
+curl -X $1 http://localhost:8080/j2/rest/$2
