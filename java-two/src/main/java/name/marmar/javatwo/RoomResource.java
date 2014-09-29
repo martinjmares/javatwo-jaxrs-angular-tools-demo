@@ -20,14 +20,14 @@ public class RoomResource {
 
     @GET
     @Produces("application/json")
-    public Collection<Room> list() {
+    public Collection<Room> listRooms() {
         return roomCatalogueService.listRooms();
     }
 
     @GET
     @Produces("application/json")
     @Path("{roomNumber}")
-    public Room getByNumber(@PathParam("roomNumber") Integer roomNumber) {
+    public Room getRoomByNumber(@PathParam("roomNumber") Integer roomNumber) {
         return roomCatalogueService.getRoomByNumber(roomNumber);
     }
 }

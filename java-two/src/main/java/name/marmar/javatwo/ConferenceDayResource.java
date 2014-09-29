@@ -32,7 +32,7 @@ public class ConferenceDayResource {
      */
     @GET
     @Produces("application/json")
-    public String list() {
+    public String listPresentations() {
         return RESULT;
     }
 

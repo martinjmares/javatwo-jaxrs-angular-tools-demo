@@ -1,0 +1,1 @@
+cat ./target/classes/application.wadl | xmllint --format -

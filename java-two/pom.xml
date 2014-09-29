@@ -21,6 +21,18 @@
     
     <dependencies>
         <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>2.10.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.ext</groupId>
+            <artifactId>jersey-wadl-doclet</artifactId>
+            <version>2.10.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
@@ -79,6 +91,83 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.sun.jersey.contribs</groupId>
+                <artifactId>maven-wadl-plugin</artifactId>
+                <version>1.18</version>
+                <executions>
+                    <execution>
+                        <id>generate</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <wadlFile>${project.build.outputDirectory}/application.wadl</wadlFile>
+                    <formatWadlFile>true</formatWadlFile>
+                    <baseUri>http://localhost:8080/j2/rest</baseUri>
+                    <packagesResourceConfig>
+                        <param>name.marmar.javatwo</param>
+                    </packagesResourceConfig>
+                    <wadlGenerators>
+                        <wadlGeneratorDescription>
+                            <className>com.sun.jersey.server.wadl.generators.resourcedoc.WadlGeneratorResourceDocSupport</className>
+                            <properties>
+                                <property>
+                                    <name>resourceDocFile</name>
+                                    <value>${project.build.outputDirectory}/resourcedoc.xml</value>
+                                </property>
+                            </properties>
+                        </wadlGeneratorDescription>
+                    </wadlGenerators>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>javadoc</goal>
+                        </goals>
+                        <phase>process-classes</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <verbose>false</verbose>
+                    <show>public</show>
+                    <subpackages>name.marmar.javatwo</subpackages>
+                    <doclet>org.glassfish.jersey.wadl.doclet.ResourceDoclet</doclet>
+                    <docletPath>${path.separator}${project.build.outputDirectory}</docletPath>
+                    <docletArtifacts>
+                        <!-- jersey doclet generator -->
+                        <docletArtifact>
+                            <groupId>org.glassfish.jersey.ext</groupId>
+                            <artifactId>jersey-wadl-doclet</artifactId>
+                            <version>2.12</version>
+                        </docletArtifact>
+                        <!--
+                            Also specify jersey and xerces as doclet artifacts as the ResourceDoclet
+                            uses classes provided by them to generate the resourcedoc.
+                         -->
+                        <docletArtifact>
+                            <groupId>org.glassfish.jersey.core</groupId>
+                            <artifactId>jersey-server</artifactId>
+                            <version>2.12</version>
+                        </docletArtifact>
+                        <docletArtifact>
+                            <groupId>xerces</groupId>
+                            <artifactId>xercesImpl</artifactId>
+                            <version>2.11.0</version>
+                        </docletArtifact>
+                    </docletArtifacts>
+                    <useStandardDocletOptions>false</useStandardDocletOptions>
+                    <additionalparam>-output ${project.build.outputDirectory}/resourcedoc.xml</additionalparam>
+                </configuration>
             </plugin>
         </plugins>
     </build>

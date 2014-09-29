@@ -28,11 +28,12 @@ public class PresentationResource {
     /** Returns list of planned presentations.
      *
      * @param day is optional and if is set then result is filtered for this particular day.
+     * @param room is optional and if is set then result is filtered for presentation in defined room.
      * @return list of presentations
      */
     @GET
     @Produces("application/json")
-    public Collection<Presentation> list(@QueryParam("day") final ConferenceDay day,
+    public Presentation[] listPresentations(@QueryParam("day") final ConferenceDay day,
                                                       @QueryParam("room") final Integer room) {
         log.info("listPresentations(" + day + ", " + room + ")");
         List<Predicate<Presentation>> predicates = new ArrayList<>(2);
@@ -52,7 +53,8 @@ public class PresentationResource {
                 }
             });
         }
-        return Collections2.filter(service.listPresentations(), Predicates.and(predicates));
+        Collection<Presentation> result = Collections2.filter(service.listPresentations(), Predicates.and(predicates));
+        return result.toArray(new Presentation[result.size()]);
     }
 
     /** Add a new presentation
